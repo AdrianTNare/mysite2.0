@@ -2,13 +2,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { Navbar } from "../components/Navbar";
-import { ProjectCard } from "../components/PorjectCard";
-import { FrontEndTechItem } from "../components/FrontEndTechItem";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { SiWechat } from "react-icons/si";
-import { MdEmail } from "react-icons/md";
-import { BackendTechItem } from "../components/BackendTechItem";
-import { CiTechItem } from "../components/CITechItem";
+import { Landing } from "../components/Landing";
+import { Projects } from "../components/Projects";
+import { Technologies } from "../components/Technologies";
+import { Footer } from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -19,135 +16,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="bg-mygreen-light">
-        <div className="max-w-5xl px-3 md:px-5 mx-auto pt-5">
-          <Navbar />
-        </div>
-        <div className="max-w-xl lg:max-w-3xl  mx-auto">
-          <div>
-            <div className="hero min-h-[88vh]">
-              <div className="hero-content flex-col md:flex-row-reverse">
-                <img
-                  src="https://placeimg.com/260/400/arch"
-                  className="max-w-sm rounded-lg shadow-2xl"
-                />
-                <div className="text-center md:text-left">
-                  <h1 className="text-5xl text-mygreen-dark font-bold">
-                    Adrian Nare
-                  </h1>
-                  <p className="py-6">
-                    I&apos;m a Full Stack JavaScript/TypeScript Web Developer,
-                    Vim keybindings enthusiast and a Computer Science degree
-                    holder. I&apos;m also generally interested in all things
-                    tech.
-                  </p>
-                  <button className="btn bg-mygreen-dark border-mygreen-dark shadow-xl">
-                    Get Started
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Navbar />
+        <Landing />
       </div>
-      <div className="bg-mygreen-dark min-h-[85vh]">
-        <div className="max-w-5xl px-3 md:px-5 mx-auto pt-16 md:pt-16">
-          <h2 className="text-5xl text-mygreen-light font-bold text-center">
-            Projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-xl lg:max-w-3xl mx-auto py-20">
-            <ProjectCard
-              heading={"Personal Portfolio"}
-              body={
-                "A uniquw, responsive, and sleek website for presenting my work."
-              }
-              tools={["React", "DaisyUI"]}
-              codeSrc={"https://gitgub.com/Adriantnare"}
-              imgSrc={"https://placeimg.com/400/225/arch"}
-            />
-            <ProjectCard
-              heading={"Blog Frontend"}
-              body={
-                "Created a site allowing user to create, view, and comment on blog posts."
-              }
-              tools={["React", "DaisyUI"]}
-              codeSrc={""}
-              imgSrc={"https://placeimg.com/400/225/arch"}
-            />
-            <ProjectCard
-              heading={"Blog Backend"}
-              body={
-                "Created a Java-based backend to support my Blog's frontend."
-              }
-              tools={["Java", "Springboot"]}
-              codeSrc={""}
-              imgSrc={"https://placeimg.com/400/225/arch"}
-            />
-          </div>
-        </div>
-      </div>
-      <div className="bg-mygreen-light min-h-[85vh]">
-        <div className="max-w-xl lg:max-w-3xl px-3 md:px-5 mx-auto pt-16 md:pt-16">
-          <h2 className="text-5xl text-mygreen-dark font-bold">Technologies</h2>
-          <p className="py-6 max-w-lg">
-            I&apos;ve generally worked with a wide variety of technologies in
-            the past, with a focus on React-based developemnt. A few of those
-            are listed down below.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-xl lg:max-w-3xl mx-auto py-4">
-            <FrontEndTechItem />
-            <BackendTechItem />
-            <CiTechItem />
-          </div>
-          <h2 className="text-5xl text-mygreen-dark font-bold mt-16">
-            About Adrian
-          </h2>
-          <p className="pt-6 max-w-lg">
-            A Full-stack web developer with a focus on the react ecosystem. He
-            mostly works with Next.js,TypeScript with help of the React Testing
-            Library and Vitest to build stable, performant and well tested
-            applications.
-          </p>
-          <p className="pt-2 max-w-lg">
-            In his spare time he can be found tinkering with his vim config so
-            feel free to inbox him with a neat vim trick you might have up your
-            sleeve.
-          </p>
-          <div className="pt-28 pb-4 md:pt-20">
-            <p className="text-mygreen-dark text-2xl font-bold">Contact</p>
-            <div className="flex mt-2 gap-1 font-bold">
-              <p className="flex">
-                Email <MdEmail className="text-mygreen-dark text-2xl ml-1" /> :{" "}
-              </p>
-              <p className="font-bold text-mygreen-dark">
-                adriantnare@icloud.com
-              </p>
-            </div>
-            <div className="flex justify-between py-4 items-center">
-              <p className="font-bold">Social media:</p>
-              <ul className="menu menu-horizontal gap-0 flex text-2xl">
-                <li>
-                  <a>
-                    <BsGithub className="text-mygreen-dark" />
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <BsLinkedin className="text-mygreen-dark" />
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <SiWechat className="text-mygreen-dark" />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <p className="text-xs text-mygreen-light text-center font-bold bg-mygreen-dark py-4">
-          Made with love with React © {new Date().getFullYear()}
-        </p>
-      </div>
+      <Projects />
+      <Technologies />
+      <Footer />
     </div>
   );
 };
