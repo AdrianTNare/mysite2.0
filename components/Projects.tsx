@@ -2,7 +2,7 @@ import { ProjectCard } from "./PorjectCard";
 
 export const Projects = () => {
   return (
-    <div className="bg-mygreen-dark min-h-[85vh]">
+    <div id="projects" className="bg-mygreen-dark min-h-[85vh]">
       <div className="max-w-5xl px-3 md:px-5 mx-auto pt-16 md:pt-16">
         <h2 className="text-5xl text-mygreen-light font-bold text-center">
           Projects
@@ -14,7 +14,7 @@ export const Projects = () => {
               "A uniquw, responsive, and sleek website for presenting my work."
             }
             tools={["React", "DaisyUI"]}
-            codeSrc={"https://gitgub.com/Adriantnare"}
+            codeSrc={"https://github.com/AdrianTNare/"}
             imgSrc={"https://placeimg.com/400/225/arch"}
           />
           <ProjectCard
@@ -23,14 +23,14 @@ export const Projects = () => {
               "Created a site allowing user to create, view, and comment on blog posts."
             }
             tools={["React", "DaisyUI"]}
-            codeSrc={""}
+            codeSrc={"https://github.com/AdrianTNare/myblog-frontend"}
             imgSrc={"https://placeimg.com/400/225/arch"}
           />
           <ProjectCard
             heading={"Blog Backend"}
             body={"Created a Java-based backend to support my Blog's frontend."}
             tools={["Java", "Springboot"]}
-            codeSrc={""}
+            codeSrc={"https://github.com/AdrianTNare/MyBlog-Springboot-Backend"}
             imgSrc={"https://placeimg.com/400/225/arch"}
           />
         </div>

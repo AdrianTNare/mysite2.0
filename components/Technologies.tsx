@@ -7,7 +7,7 @@ import { FrontEndTechItem } from "./FrontEndTechItem";
 
 export const Technologies = () => {
   return (
-    <div className="bg-mygreen-light min-h-[85vh]">
+    <div id="technologies" className="bg-mygreen-light min-h-[85vh]">
       <div className="max-w-xl lg:max-w-3xl px-3 md:px-5 mx-auto pt-16 md:pt-16">
         <h2 className="text-5xl text-mygreen-dark font-bold">Technologies</h2>
         <p className="py-6 max-w-lg">
@@ -20,7 +20,7 @@ export const Technologies = () => {
           <BackendTechItem />
           <CiTechItem />
         </div>
-        <h2 className="text-5xl text-mygreen-dark font-bold mt-16">
+        <h2 id="about" className="text-5xl text-mygreen-dark font-bold mt-16">
           About Adrian
         </h2>
         <p className="pt-6 max-w-lg">
@@ -34,7 +34,7 @@ export const Technologies = () => {
           feel free to inbox him with a neat vim trick you might have up your
           sleeve.
         </p>
-        <div className="pt-28 pb-4 md:pt-20">
+        <div id="contact" className="pt-28 pb-4 md:pt-20">
           <p className="text-mygreen-dark text-2xl font-bold">Contact</p>
           <div className="flex mt-2 gap-1 font-bold">
             <p className="flex">
@@ -48,12 +48,20 @@ export const Technologies = () => {
             <p className="font-bold">Social media:</p>
             <ul className="menu menu-horizontal gap-0 flex text-2xl">
               <li>
-                <a>
+                <a
+                  href="https://github.com/AdrianTNare"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <BsGithub className="text-mygreen-dark" />
                 </a>
               </li>
               <li>
-                <a>
+                <a
+                  href="https://www.linkedin.com/in/adriantnare/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <BsLinkedin className="text-mygreen-dark" />
                 </a>
               </li>

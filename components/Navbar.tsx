@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const Navbar = () => {
   return (
     <div className="max-w-5xl px-3 md:px-5 mx-auto pt-5">
@@ -25,16 +27,24 @@ export const Navbar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-mygreen-dark rounded-box w-52"
             >
               <li>
-                <a className="text-myspace">Projects</a>
+                <Link href="#projects">
+                  <a className="text-myspace">Projects</a>
+                </Link>
               </li>
               <li>
-                <a className="text-myspace">Technologies</a>
+                <Link href="#technologies">
+                  <a className="text-myspace">Technologies</a>
+                </Link>
               </li>
               <li>
-                <a className="text-myspace">Contact</a>
+                <Link href="#contact">
+                  <a className="text-myspace">Contact</a>
+                </Link>
               </li>
               <li>
-                <a className="text-myspace">About</a>
+                <Link href="#about">
+                  <a className="text-myspace">About</a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -50,16 +60,24 @@ export const Navbar = () => {
         <div className="navbar-end ">
           <ul className="menu menu-horizontal p-0 mr-5 gap-5 hidden md:flex">
             <li>
-              <a className="text-myspace">Projects</a>
+              <Link href="#projects">
+                <a className="text-myspace">Projects</a>
+              </Link>
             </li>
             <li>
-              <a className="text-myspace">Technologies</a>
+              <Link href="#technologies">
+                <a className="text-myspace">Technologies</a>
+              </Link>
             </li>
             <li>
-              <a className="text-myspace">Contact</a>
+              <Link href="#contact">
+                <a className="text-myspace">Contact</a>
+              </Link>
             </li>
             <li>
-              <a className="text-myspace">About</a>
+              <Link href="#about">
+                <a className="text-myspace">About</a>
+              </Link>
             </li>
           </ul>
         </div>

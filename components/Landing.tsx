@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const Landing = () => {
   return (
@@ -13,7 +14,6 @@ export const Landing = () => {
                 objectFit="cover"
                 layout="fill"
                 className="rounded-lg"
-
               />
             </div>
             {/* <img
@@ -26,12 +26,14 @@ export const Landing = () => {
               </h1>
               <p className="py-6">
                 I&apos;m a Full Stack JavaScript/TypeScript Web Developer, Vim
-                keybindings enthusiast and a Computer Science graduate.
-                I&apos;m also generally interested in all things tech.
+                keybindings enthusiast and a Computer Science graduate. I&apos;m
+                also generally interested in all things tech.
               </p>
-              <button className="btn bg-mygreen-dark border-mygreen-dark shadow-xl">
-                Contact
-              </button>
+              <Link href="#contact">
+                <a className="btn bg-mygreen-dark border-mygreen-dark shadow-xl">
+                  Contact
+                </a>
+              </Link>
             </div>
           </div>
         </div>
