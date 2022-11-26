@@ -35,12 +35,22 @@ export const ProjectCard = ({
           ))}
         </div>
         <div className="card-actions justify-evenly mt-4">
-          <button className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600">
+          <a
+            href={codeSrc}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
+          >
             Source code
-          </button>
-          <button className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600">
+          </a>
+          <a
+            href={codeSrc}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
+          >
             View App
-          </button>
+          </a>
         </div>
       </div>
     </div>
