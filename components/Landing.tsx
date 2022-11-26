@@ -7,9 +7,9 @@ export const Landing = () => {
       <div>
         <div className="hero min-h-[88vh]">
           <div className="hero-content flex-col md:flex-row-reverse">
-            <div className="rounded-lg shadow-2xl w-[700px] h-[400px] max-w-sm relative">
+            <div className="rounded-lg shadow-2xl  h-[400px] w-[30rem] sm:w-[38rem] relative">
               <Image
-                src="https://placeimg.com/260/400/arch"
+                src="/formal.jpg"
                 alt="landing image"
                 objectFit="cover"
                 layout="fill"
