@@ -1,8 +1,56 @@
+import { useEffect, useState } from "react";
+import { Alert } from "./Alert";
 import { ProjectCard } from "./PorjectCard";
 
+type AlertKeys = "portfolio" | "blogBackend" | "blogFrontend";
+interface Message {
+  title: string;
+  body: string;
+}
+
+const alertMessages: Record<AlertKeys, Message> = {
+  portfolio: {
+    title: "In View",
+    body: "You area currently viewing the app",
+  },
+  blogBackend: {
+    title: "Live Site Unavailable",
+    body: "The live site is currently unvailable",
+  },
+  blogFrontend: {
+    title: "Live Site Unavailable",
+    body: "The live site is currently unvailable",
+  },
+};
+
 export const Projects = () => {
+  const [message, setMessage] = useState<Message>({
+    title: "",
+    body: "",
+  });
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleClick = (project: AlertKeys) => {
+    setMessage(alertMessages[project]);
+    setShowAlert(true);
+  };
+
+  useEffect(() => {
+    let timeoutID: NodeJS.Timeout;
+    const hideAlert = async () => {
+      timeoutID = await setTimeout(() => {
+        setShowAlert(false);
+      }, 2500);
+    };
+    if (showAlert) {
+      hideAlert();
+    }
+    return () => clearTimeout(timeoutID);
+  }, [showAlert]);
+
   return (
     <div id="projects" className="bg-mygreen-dark min-h-[85vh]">
+      {showAlert && <Alert body={message.body} />}
       <div className="max-w-5xl px-3 md:px-5 mx-auto pt-16 md:pt-16">
         <h2 className="text-5xl text-mygreen-light font-bold text-center">
           Projects
@@ -11,28 +59,78 @@ export const Projects = () => {
           <ProjectCard
             heading={"Personal Portfolio"}
             body={
-              "A uniquw, responsive, and sleek website for presenting my work."
+              "A unique, responsive, and sleek website for presenting my work."
             }
             tools={["React", "DaisyUI"]}
-            codeSrc={"https://github.com/AdrianTNare/"}
             imgSrc={"https://placeimg.com/400/225/arch"}
-          />
+          >
+            <a
+              href={"https://github.com/AdrianTNare/mysite2.0"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
+            >
+              Source code
+            </a>
+            <button
+              onClick={() => handleClick("portfolio")}
+              className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
+            >
+              View App
+            </button>
+            {/* <a
+            href={codeSrc}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
+          >
+            View App
+          </a> */}
+          </ProjectCard>
           <ProjectCard
             heading={"Blog Frontend"}
             body={
-              "Created a site allowing user to create, view, and comment on blog posts."
+              "Created a site allowing users to create, view, and comment on blog posts."
             }
             tools={["React", "DaisyUI"]}
-            codeSrc={"https://github.com/AdrianTNare/myblog-frontend"}
             imgSrc={"https://placeimg.com/400/225/arch"}
-          />
+          >
+            <a
+              href={"https://github.com/AdrianTNare/myblog-frontend"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
+            >
+              Source code
+            </a>
+            <button
+              onClick={() => handleClick("blogFrontend")}
+              className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
+            >
+              View App
+            </button>
+          </ProjectCard>
           <ProjectCard
             heading={"Blog Backend"}
             body={"Created a Java-based backend to support my Blog's frontend."}
             tools={["Java", "Springboot"]}
-            codeSrc={"https://github.com/AdrianTNare/MyBlog-Springboot-Backend"}
             imgSrc={"https://placeimg.com/400/225/arch"}
-          />
+          >
+            <a
+              href={"https://github.com/AdrianTNare/MyBlog-Springboot-Backend"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
+            >
+              Source code
+            </a>
+            <button
+              onClick={() => handleClick("blogBackend")}
+              className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
+            >
+              View App
+            </button>
+          </ProjectCard>
         </div>
       </div>
     </div>

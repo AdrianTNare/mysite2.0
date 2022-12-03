@@ -1,8 +1,10 @@
+import Image from "next/image";
+import { PropsWithChildren, useState } from "react";
+
 interface Props {
   heading: string;
   body: string;
   tools: string[];
-  codeSrc: string;
   imgSrc: string;
 }
 
@@ -10,14 +12,22 @@ export const ProjectCard = ({
   heading,
   body,
   tools,
-  codeSrc,
   imgSrc,
-}: Props) => {
+  children,
+}: Props & PropsWithChildren) => {
   return (
     <div className="card card-compact w-72 glass mx-auto shadow-xl">
-      <figure>
+      <div className="rounded-lg h-[162px] w-[18rem] sm:w-[18rem] relative">
+        <Image
+          src={imgSrc}
+          alt="landing image"
+          objectFit="cover"
+          layout="fill"
+        />
+      </div>
+      {/* <figure>
         <img src={imgSrc} alt="car!" />
-      </figure>
+      </figure> */}
       <div className="card-body">
         <h2 className="card-title  text-myspace">{heading}</h2>
         <span className="border-4 border-slate-600 w-12  " />
@@ -34,24 +44,7 @@ export const ProjectCard = ({
             </div>
           ))}
         </div>
-        <div className="card-actions justify-evenly mt-4">
-          <a
-            href={codeSrc}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
-          >
-            Source code
-          </a>
-          <a
-            href={codeSrc}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
-          >
-            View App
-          </a>
-        </div>
+        <div className="card-actions justify-evenly mt-4">{children}</div>
       </div>
     </div>
   );
