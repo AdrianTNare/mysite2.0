@@ -1,0 +1,35 @@
+{
+  "configurations": {
+    "client": {
+      "adapter": "chrome",
+      "breakpoints": {
+        "exception": {
+          "all": "N",
+          "uncaught": "N"
+        }
+      },
+      "configuration": {
+        "request": "launch",
+        "url": "http://localhost:3000/",
+        "webRoot":"${workspaceRoot}"
+      }
+    },
+    "server": {
+      "adapter": "vscode-node",
+      "breakpoints": {
+        "exception": {
+          "all": "N",
+          "uncaught": "N"
+        }
+      },
+      "configuration": {
+        "request": "launch",
+        "type":"node",
+        "protocol": "auto",
+        "stopOnEntry": true,
+        "args": ["/usr/local/bin/yarn","dev"],
+        "console": "integratedTerminal"
+      }
+    }
+  }
+}
