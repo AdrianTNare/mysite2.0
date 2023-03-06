@@ -1,11 +1,11 @@
-import Image from "next/image";
-import { PropsWithChildren, useState } from "react";
+import Image, { StaticImageData } from "next/image";
+import { PropsWithChildren } from "react";
 
 interface Props {
   heading: string;
   body: string;
   tools: string[];
-  imgSrc: string;
+  imgSrc: StaticImageData | string;
 }
 
 export const ProjectCard = ({
