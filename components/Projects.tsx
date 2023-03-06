@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Alert } from "./Alert";
 import { ProjectCard } from "./PorjectCard";
+import blogOpt from "../public/blog_opt.jpg";
+import portfolioOpt from "../public/portfolio_opt.jpg";
 
 type AlertKeys = "portfolio" | "blogBackend" | "blogFrontend";
 interface Message {
@@ -38,7 +40,7 @@ export const Projects = () => {
   useEffect(() => {
     let timeoutID: NodeJS.Timeout;
     const hideAlert = async () => {
-      timeoutID = await setTimeout(() => {
+      timeoutID = setTimeout(() => {
         setShowAlert(false);
       }, 2500);
     };
@@ -62,7 +64,7 @@ export const Projects = () => {
               "A unique, responsive, and sleek website for presenting my work."
             }
             tools={["React", "DaisyUI"]}
-            imgSrc={"https://placeimg.com/400/225/arch"}
+            imgSrc={portfolioOpt}
           >
             <a
               href={"https://github.com/AdrianTNare/mysite2.0"}
@@ -78,14 +80,6 @@ export const Projects = () => {
             >
               View App
             </button>
-            {/* <a
-            href={codeSrc}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
-          >
-            View App
-          </a> */}
           </ProjectCard>
           <ProjectCard
             heading={"Blog Frontend"}
@@ -93,7 +87,7 @@ export const Projects = () => {
               "Created a site allowing users to create, view, and comment on blog posts."
             }
             tools={["React", "DaisyUI"]}
-            imgSrc={"https://placeimg.com/400/225/arch"}
+            imgSrc={blogOpt}
           >
             <a
               href={"https://github.com/AdrianTNare/myblog-frontend"}
@@ -103,18 +97,28 @@ export const Projects = () => {
             >
               Source code
             </a>
+            <a
+              href="https://wayvy.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
+            >
+              View App
+            </a>
+            {/*
             <button
               onClick={() => handleClick("blogFrontend")}
               className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
             >
               View App
             </button>
+            */}
           </ProjectCard>
           <ProjectCard
             heading={"Blog Backend"}
             body={"Created a Java-based backend to support my Blog's frontend."}
             tools={["Java", "Springboot"]}
-            imgSrc={"https://placeimg.com/400/225/arch"}
+            imgSrc={blogOpt}
           >
             <a
               href={"https://github.com/AdrianTNare/MyBlog-Springboot-Backend"}
@@ -124,12 +128,22 @@ export const Projects = () => {
             >
               Source code
             </a>
+            <a
+              href="https://adn-myblog-backend-prod.up.railway.app/posts/all"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
+            >
+              View App
+            </a>
+            {/*
             <button
               onClick={() => handleClick("blogBackend")}
               className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
             >
               View App
             </button>
+            */}
           </ProjectCard>
         </div>
       </div>

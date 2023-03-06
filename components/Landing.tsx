@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import formalOpt from "../public/formal_opt.jpg";
 
 export const Landing = () => {
   return (
@@ -9,11 +10,12 @@ export const Landing = () => {
           <div className="hero-content flex-col md:flex-row-reverse">
             <div className="rounded-lg shadow-2xl  h-[400px] w-[18rem] sm:w-[38rem] relative">
               <Image
-                src="/formal.jpg"
+                src={formalOpt}
                 alt="landing image"
                 objectFit="cover"
                 layout="fill"
                 className="rounded-lg"
+                priority={true}
               />
             </div>
             {/* <img
