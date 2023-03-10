@@ -15,6 +15,7 @@ export const Landing = () => {
                 objectFit="cover"
                 layout="fill"
                 className="rounded-lg"
+                loading="eager"
                 priority={true}
               />
             </div>
