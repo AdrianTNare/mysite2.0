@@ -59,17 +59,17 @@ export const Projects = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-xl lg:max-w-3xl mx-auto py-20">
           <ProjectCard
+            imgSrc={portfolioOpt}
+            tools={["React", "DaisyUI"]}
             heading={"Personal Portfolio"}
             body={
               "A unique, responsive, and sleek website for presenting my work."
             }
-            tools={["React", "DaisyUI"]}
-            imgSrc={portfolioOpt}
           >
             <a
-              href={"https://github.com/AdrianTNare/mysite2.0"}
               target="_blank"
               rel="noopener noreferrer"
+              href={"https://github.com/AdrianTNare/mysite2.0"}
               className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
             >
               Source code
@@ -82,25 +82,25 @@ export const Projects = () => {
             </button>
           </ProjectCard>
           <ProjectCard
-            heading={"Blog Frontend"}
-            body={
-              "Created a site allowing users to create, view, and comment on blog posts."
-            }
-            tools={["React", "DaisyUI"]}
             imgSrc={blogOpt}
+            heading={"Forum Frontend"}
+            tools={["React", "DaisyUI"]}
+            body={
+              "Created a site allowing users to create, view, and comment on forum posts."
+            }
           >
             <a
-              href={"https://github.com/AdrianTNare/myblog-frontend"}
               target="_blank"
               rel="noopener noreferrer"
+              href={"https://github.com/AdrianTNare/myblog-frontend"}
               className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
             >
               Source code
             </a>
             <a
-              href="https://wayvy.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
+              href="https://wayvy.vercel.app/"
               className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
             >
               View App
@@ -115,23 +115,23 @@ export const Projects = () => {
             */}
           </ProjectCard>
           <ProjectCard
-            heading={"Blog Backend"}
-            body={"Created a Java-based backend to support my Blog's frontend."}
-            tools={["Java", "Springboot"]}
             imgSrc={blogOpt}
+            heading={"Forum Backend"}
+            tools={["Java", "Springboot"]}
+            body={"Created a Java-based backend to support my example Forum's frontend."}
           >
             <a
-              href={"https://github.com/AdrianTNare/MyBlog-Springboot-Backend"}
               target="_blank"
               rel="noopener noreferrer"
+              href={"https://github.com/AdrianTNare/MyBlog-Springboot-Backend"}
               className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
             >
               Source code
             </a>
             <a
-              href="https://adn-myblog-backend-prod.up.railway.app/posts/all"
               target="_blank"
               rel="noopener noreferrer"
+              href="https://adn-myblog-backend-prod.up.railway.app/posts/all"
               className="btn btn-primary btn-xs normal-case bg-slate-600 border-slate-600 hover:bg-slate-800 hover:border-slate-800"
             >
               View App
